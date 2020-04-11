@@ -11,10 +11,15 @@
         <div class="container">
 
             <div class="mt-5">
-                <h1>
-                    What's the weather outside?
-                </h1>
                 <form class="col col-sm-12 mt-5" id="weather-form">
+                    <div style="max-width:100%;height:0;padding-bottom:67%;position:relative;">
+                        <iframe src="https://giphy.com/embed/2v1Y2dt4FvwI0" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </div>
+
+                    <h1 class="mt-5">
+                        What's the weather outside?
+                    </h1>
+
                     <div class="form-group">
                         <label for="city">City</label>
                         <input class="form-control form-control-lg" id="city" name="city" placeholder="Moscow" required />
@@ -24,7 +29,7 @@
                         <input class="form-control form-control-lg" id="country"  name="country" placeholder="Russia" required />
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Guess what?</button>
+                    <button type="submit" class="btn btn-primary">Predict!</button>
                 </form>
             </div>
 
