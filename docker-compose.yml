@@ -1,0 +1,7 @@
+version: "3"
+services:
+  server:
+    build: .
+    command: "java -jar app/app.jar"
+    ports:
+      - "8080:8080"
