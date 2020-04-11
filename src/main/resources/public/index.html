@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>Weather App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
     <body>
-        <button onclick="sendRequest()">
-            What's the weather outside?
-        </button>
+        <div class="container">
+
+            <div class="mt-5">
+                <h1>
+                    What's the weather outside?
+                </h1>
+                <form class="col col-sm-12 mt-5" id="weather-form">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input class="form-control form-control-lg" id="city" name="city" placeholder="Moscow" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input class="form-control form-control-lg" id="country"  name="country" placeholder="Russia" required />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Guess what?</button>
+                </form>
+            </div>
+
+        </div>
 
         <script>
-            function sendRequest() {
+            const weatherForm = document.getElementById("weather-form");
 
+            weatherForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const formData = new FormData(weatherForm);
+
+                getWeatherForecast(formData.get("city"), formData.get("country"));
+            });
+
+            function getWeatherForecast(city, country) {
+                fetch(`/weatherForecast?country=${country}&city=${city}`, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        console.log(response);
+                    })
+                    .catch(err => {
+                        alert(err);
+                    });
             }
         </script>
     </body>

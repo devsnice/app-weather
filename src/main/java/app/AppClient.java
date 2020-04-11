@@ -4,11 +4,14 @@ import static spark.Spark.*;
 
 public class AppClient {
     public void initClient() {
-        port(8080);
         staticFiles.location("/public");
+        port(8080);
 
-        get("/hello", (req, res) -> {
-           return "hello";
+        get("/weatherForecast", (req, res) -> {
+            final String country = req.queryParams("country");
+            final String city = req.queryParams("city");
+
+            return "weather";
         });
     }
 }
