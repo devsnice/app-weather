@@ -1,7 +1,9 @@
 package app;
 
+import weatherForecaster.OpenWeatherForecaster;
+
 public class App {
     public static void main(String[] args) {
-        new AppClient().initClient();
+        new AppClient(new OpenWeatherForecaster()).initClient();
     }
 }
