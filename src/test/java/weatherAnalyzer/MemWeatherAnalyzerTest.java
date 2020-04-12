@@ -21,7 +21,7 @@ class MemWeatherAnalyzerTest {
 
         WeatherAnalyzerResult analysis = analyzer.analyze(forecastForToday);
 
-        assertThat(analysis.description).isEqualTo("It feels like 10.5, it's 2020 year, stay home!");
+        assertThat(analysis.description).isEqualTo("It feels like 10.5 °C, it's 2020 year, stay home!");
     }
 
     @Test
@@ -32,7 +32,7 @@ class MemWeatherAnalyzerTest {
 
         WeatherAnalyzerResult analysis = analyzer.analyze(forecastForToday);
 
-        assertThat(analysis.description).isEqualTo("It feels like 0.0, rain volume for last 1 hour – 5.4 mm, it's 2020 year, stay home!");
+        assertThat(analysis.description).isEqualTo("It feels like 0.0 °C, rain volume for last 1 hour – 5.4 mm, it's 2020 year, stay home!");
     }
 
     @Test
@@ -43,7 +43,7 @@ class MemWeatherAnalyzerTest {
 
         WeatherAnalyzerResult analysis = analyzer.analyze(forecastForToday);
 
-        assertThat(analysis.description).isEqualTo("It feels like 0.0, snow volume for last 1 hour – 6.1 mm, it's 2020 year, stay home!");
+        assertThat(analysis.description).isEqualTo("It feels like 0.0 °C, snow volume for last 1 hour – 6.1 mm, it's 2020 year, stay home!");
     }
 
 

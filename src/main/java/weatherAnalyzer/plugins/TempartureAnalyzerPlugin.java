@@ -7,7 +7,7 @@ import model.WeatherTypes;
 public class TempartureAnalyzerPlugin extends WeatherAnalyzerPlugin {
     @Override
     public WeatherAnalyzerResult.Builder run(WeatherAnalyzerResult.Builder analysis, Forecast forecast) {
-        analysis.enhanceDescription(String.format("It feels like %s", forecast.feelsLike));
+        analysis.enhanceDescription(String.format("It feels like %s °C", forecast.feelsLike));
 
         if (forecast.feelsLike > 30) {
             analysis.setWeatherType(WeatherTypes.BLOODY_HOT_TEMP);
