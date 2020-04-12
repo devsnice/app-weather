@@ -21,7 +21,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static model.Forecast.Builder.forecast;
 
 public class OpenWeatherForecaster implements WeatherForecaster {
-    private String API_KEY = "e5677b9e266cb314282f46129451c25a";
+    private String API_KEY;
+
+    public OpenWeatherForecaster(String apiKey) {
+        this.API_KEY = apiKey;
+    }
 
     @Override
     public Forecast getByCountryAndCity(Country country, City city) throws IOException, InterruptedException {

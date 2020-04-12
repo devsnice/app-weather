@@ -25,6 +25,8 @@ public class AppClient {
 
         get("/weatherForecast", (req, res) -> {
             // TODO: add validation
+            // TODO: map exceptions on http status errors
+
             final Country country = Country.from(req.queryParams("country"));
             final City city = City.from(req.queryParams("city"));
 
