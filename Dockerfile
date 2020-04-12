@@ -7,3 +7,4 @@ FROM openjdk:11-jre-slim
 RUN mkdir /app
 
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/app.jar
+COPY  ./config.json config.json
