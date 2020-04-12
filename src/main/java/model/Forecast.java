@@ -4,11 +4,11 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class Forecast {
-    private Double feelsLike;
-    private Optional<Double> windSpeed;
-    private Optional<Integer> clouds;
-    private Optional<Double> rainForLastHour;
-    private Optional<Double> snowForLastHour;
+    public final Double feelsLike;
+    public final Optional<Double> windSpeed;
+    public final Optional<Integer> clouds;
+    public final Optional<Double> rainForLastHour;
+    public final Optional<Double> snowForLastHour;
 
 
     public Forecast(Builder builder) {
